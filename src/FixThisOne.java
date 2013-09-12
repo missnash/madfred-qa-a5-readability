@@ -2,32 +2,33 @@ import java.util.Scanner;
 
 public class FixThisOne {
 
-	public static void main(String[] args) 
-	{
-		//This program checks your airline tickets
-		 //This is a bynch of code dunno what it doez
-		final float PRICE_PER_DOZEN = 3.25f;final float PRICE_PER_SINGLE = 0.45f;
-		int eggs, d, s;
-			float dozens_cost, singlesCost, tc;
-		Scanner kbrd = new Scanner(System.in);
-		System.out.print("How many eggs do you want? >> ");
-		eggs = kbrd.nextInt();
-		d = eggs / 12;
-		s = eggs % 12;
-		dozens_cost = d * PRICE_PER_DOZEN;
-		singlesCost = s * PRICE_PER_SINGLE;
-		tc = dozens_cost + singlesCost;
+	public static void main(String[] args) {
 		
-		/*This program checks your airline tickets
-		 * This is a block comment
-		 * Coding is fun!
-		 */
-		System.out.println("You ordered " + eggs + " eggs in total.");
-			System.out.println("That's " + d + " dozen at $3.25, or $" + dozens_cost);
-				System.out.println("That's " + s + " singles at 45c, or $" + singlesCost);
-				System.out.println("Your total cost is $" + tc);
-		
-	
+		//Declare constants, variables and scanner
+		int eggs, dozens, singles; 
+		float dozensCost;
+		final float PRICE_PER_DOZEN = 3.25f;
+		final float PRICE_PER_SINGLE_EGG = 0.45f;
+		Scanner sc = new Scanner(System.in);
+				
+		//Display Input and receive the value stored in eggs
+		System.out.println("How many eggs would you like to purchase today? >>");
+		eggs = sc.nextInt();
+				
+		//Calculating the total cost of dozens and single eggs
+		dozens = eggs / 12;
+		singles = eggs % 12;
+		dozensCost = PRICE_PER_DOZEN * dozens;
+		float singlesCost = PRICE_PER_SINGLE_EGG * singles;
+		float totalCost = dozensCost + singlesCost;
+				
+		//Output the number of eggs ordered, the total of dozens, number of loose eggs, and the total price.
+		System.out.println("You ordered " + eggs + " That's " + dozens + " dozen, at $3.25 per dozen and " + 
+		singles + " loose eggs at 45.0 cents each for a total of " + totalCost);
+				
 	}
 
 }
+
+
+
